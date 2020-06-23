@@ -11,7 +11,11 @@
 
 
 // isLastInStock :: [Car] -> Boolean
-const isLastInStock = (cars) => {
-  const lastCar = last(cars);
-  return prop('in_stock', lastCar);
-};
+// const isLastInStock = (cars) => {
+//   const lastCar = last(cars);
+//   return prop('in_stock', lastCar);
+// };
+
+// Function are called from left to right,
+// The last card is passed to the prop function implicitly.
+const isLastInStock = compose(prop('in_stock'), last);
